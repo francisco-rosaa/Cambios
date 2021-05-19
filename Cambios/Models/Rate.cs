@@ -9,5 +9,13 @@
         public double TaxRate { get; set; }
 
         public string Name { get; set; }
+
+        public string NameAndCode
+        {
+            get
+            {
+                return $"{Name}  ({Code})";
+            }
+        }
     }
 }

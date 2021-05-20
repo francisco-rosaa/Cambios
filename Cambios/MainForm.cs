@@ -16,6 +16,7 @@
         private ApiService apiService;
         private List<Rate> rates;
         private DialogService dialogService;
+        private DataService dataService;
 
         #endregion
 
@@ -25,6 +26,7 @@
             networkService = new NetworkService();
             apiService = new ApiService();
             dialogService = new DialogService();
+            dataService = new DataService();
             LoadRates();
         }
 
@@ -50,6 +52,7 @@
             if (rates.Count == 0)
             {
                 labelResult.Text = "No Internet or local data";
+                labelStatus.Text = "First start";
                 return;
             }
 
@@ -58,7 +61,7 @@
 
         private void LoadLocalRates()
         {
-            throw new NotImplementedException();
+            rates = dataService.GetData();
         }
 
         private async Task LoadApiRates()
@@ -68,6 +71,9 @@
             var response = await apiService.GetRates("http://cambios.somee.com", "/api/rates");
 
             rates = response.Result as List<Rate>;
+
+            dataService.DeleteData();
+            dataService.SaveData(rates);
         }
 
         private void RatesPresentation(bool webLoad)
@@ -110,9 +116,9 @@
                 return;
             }
 
-            decimal amount;
+            double amount;
 
-            if (!decimal.TryParse(textBoxAmount.Text, out amount))
+            if (!double.TryParse(textBoxAmount.Text, out amount))
             {
                 dialogService.ShowMessage("Error", "Amount must be a number.");
                 return;
@@ -139,7 +145,7 @@
             var rateFrom = comboBoxFrom.SelectedItem as Rate;
             var rateTo = comboBoxTo.SelectedItem as Rate;
 
-            var convertedAmount = amount / (decimal) rateFrom.TaxRate * (decimal) rateTo.TaxRate;
+            var convertedAmount = amount / (double) rateFrom.TaxRate * (double) rateTo.TaxRate;
 
             labelResult.Text = string.Format
                 (

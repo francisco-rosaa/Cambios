@@ -55,7 +55,7 @@
             // textBoxAmount
             // 
             this.textBoxAmount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxAmount.Location = new System.Drawing.Point(193, 40);
+            this.textBoxAmount.Location = new System.Drawing.Point(193, 36);
             this.textBoxAmount.Name = "textBoxAmount";
             this.textBoxAmount.Size = new System.Drawing.Size(373, 39);
             this.textBoxAmount.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.comboBoxFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxFrom.FormattingEnabled = true;
-            this.comboBoxFrom.Location = new System.Drawing.Point(193, 105);
+            this.comboBoxFrom.Location = new System.Drawing.Point(193, 101);
             this.comboBoxFrom.Name = "comboBoxFrom";
             this.comboBoxFrom.Size = new System.Drawing.Size(373, 38);
             this.comboBoxFrom.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             this.comboBoxTo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxTo.FormattingEnabled = true;
-            this.comboBoxTo.Location = new System.Drawing.Point(193, 169);
+            this.comboBoxTo.Location = new System.Drawing.Point(193, 165);
             this.comboBoxTo.Name = "comboBoxTo";
             this.comboBoxTo.Size = new System.Drawing.Size(373, 38);
             this.comboBoxTo.TabIndex = 3;

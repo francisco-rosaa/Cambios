@@ -1,12 +1,12 @@
-﻿namespace Cambios.Services
-{
-    using Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.SQLite;
-    using System.Globalization;
-    using System.IO;
+﻿using Cambios.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Globalization;
+using System.IO;
 
+namespace Cambios.Services
+{
     public class DataService
     {
         private SQLiteConnection connection;

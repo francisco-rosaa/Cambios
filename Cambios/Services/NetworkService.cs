@@ -1,8 +1,8 @@
-﻿namespace Cambios.Services
-{
-    using Models;
-    using System.Net;
+﻿using Cambios.Models;
+using System.Net;
 
+namespace Cambios.Services
+{
     public class NetworkService
     {
         public Response CheckConnection()

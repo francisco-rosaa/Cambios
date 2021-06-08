@@ -1,12 +1,12 @@
-﻿namespace Cambios.Services
-{
-    using Models;
-    using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
-    using System.Net.Http;
-    using System.Threading.Tasks;
+﻿using Cambios.Models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
+namespace Cambios.Services
+{
     public class ApiService
     {
         public async Task<Response> GetRates(string baseUrl, string controller)
